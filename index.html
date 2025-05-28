@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Trailer Dynasty Warriors Origin</title>
+</head>
+<style>
+    *,
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    #trailer {
+        position: fixed;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .intro {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 20px;
+        font-size: 20px;
+        font-family: fantasy;
+    }
+
+    .logo {
+        background-color: white;
+        width: 150px;
+        border-radius: 20px;
+    }
+
+    #btn {
+        margin-top: 20px;
+        width: 200px;
+        background-color: rgba(169, 169, 169, 0.274);
+        color: white;
+        border: none;
+        padding: 12px;
+        font-weight: 800;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <video autoplay muted loop id="trailer">
+        <source src="dw_origin_game_trailer.mp4" type="video/mp4">
+    </video>
+    <div class="intro">
+        <center>
+            <img src="dw_origin_logo.png" alt="" class="logo">
+            <p>Dynasty warriors origini adalah game yang paling populer di masanya. Hack and slash terbaik sejak dulu.</p>
+            <button id="btn" onclick="triggerBtn()">PAUSE</button>
+        </center>
+    </div>
+    <script>
+        const btn = document.getElementById("btn");
+        const trailer = document.getElementById("trailer");
+        function triggerBtn() {
+            if (trailer.paused) {
+                trailer.play();
+                btn.innerHTML = "PAUSE";
+            } else {
+                trailer.pause();
+                btn.innerHTML = "PLAY";
+            }
+        } 
+    </script>
+</body>
+
+</html>
